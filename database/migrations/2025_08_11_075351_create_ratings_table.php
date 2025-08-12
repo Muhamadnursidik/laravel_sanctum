@@ -12,11 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ratings', function (Blueprint $table) {
-            $table->BigInteger('id')->autoIncrement();
+            $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('field_id')->constrained('fields')->onDelete('cascade');
             $table->integer('rating');
-            $table->text('review');
+            $table->string('review');
             $table->timestamps();
         });
     }

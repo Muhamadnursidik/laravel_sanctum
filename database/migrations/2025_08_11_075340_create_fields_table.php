@@ -12,12 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('fields', function (Blueprint $table) {
-            $table->BigInteger('id')->autoIncrement();
-            $table->foreignId('location_id')->constrained('locations')->onDelete('cascade');
+            $table->id();
             $table->string('name');
+            $table->string('img');
+            $table->foreignId('location_id')->constrained('locations')->onDelete('cascade');
             $table->string('type');
             $table->integer('price_per_hour');
-            $table->text('description');
+            $table->string('description');
             $table->timestamps();
         });
     }

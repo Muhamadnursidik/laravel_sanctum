@@ -12,11 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('locations', function (Blueprint $table) {
-            $table->BigInteger('id')->autoIncrement();
+            $table->id();
             $table->string('name');
-            $table->string('addres');
+            $table->string('address');
             $table->string('maps');
             $table->timestamps();
+
         });
     }
 
