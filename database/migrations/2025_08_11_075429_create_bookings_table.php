@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('booking_id')->constrained('bookings')->onDelete('cascade');
-            $table->enum('payment_method',['cash','transfer','gateway']);
-            $table->enum('payment_status',['pending','success','failed']);
+            $table->enum('payment_method', ['cash', 'transfer', 'gateway']);
+            $table->enum('payment_status', ['pending', 'success', 'failed']);
             $table->integer('amount');
             $table->timestamps();
         });
+
     }
 
     /**
